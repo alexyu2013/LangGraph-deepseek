@@ -26,7 +26,6 @@ def get_llm():
         api_key=OPENAI_API_KEY,
         model_name='deepseek-v3',  # 使用 OpenAI 模型
         openai_api_base=OPENAI_API_BASE  # 指定 API 地址
-        temperature=0.7  # 调整温度，避免过于随机
     )
 
 llm = get_llm()
