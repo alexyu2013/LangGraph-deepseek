@@ -118,13 +118,13 @@ workflow.set_entry_point("gather_facts")
 graph = workflow.compile()
 
 # Streamlit UI
-st.title("Stock Market Analysis")
-question = st.text_input("Enter a stock symbol:")
-if st.button("Analyze"):
+st.title("基于DeepSeek的个股分析")
+question = st.text_input("输入股票代码:")
+if st.button(分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
     result = graph.invoke(initial_state)
-    st.subheader("Gathered Facts:")
+    st.subheader("相关股票数据如下:")
     for fact in result["facts"]:
         st.text(fact)
-    st.subheader("Final Conclusion:")
+    st.subheader("结论:")
     st.markdown(result["conclusion"])
