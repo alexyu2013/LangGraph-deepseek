@@ -24,7 +24,7 @@ OPENAI_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 替换�
 def get_llm():
     return ChatOpenAI(
         api_key=OPENAI_API_KEY,
-        model_name='deepseek-r1',  # 使用 OpenAI 模型
+        model_name='deepseek-v3',  # 使用 OpenAI 模型
         openai_api_base=OPENAI_API_BASE  # 指定 API 地址
     )
 
