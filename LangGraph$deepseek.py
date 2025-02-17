@@ -120,7 +120,7 @@ graph = workflow.compile()
 # Streamlit UI
 st.title("基于DeepSeek的个股分析")
 question = st.text_input("输入股票代码:")
-if st.button(分析"):
+if st.button("分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
     result = graph.invoke(initial_state)
     st.subheader("相关股票数据如下:")
