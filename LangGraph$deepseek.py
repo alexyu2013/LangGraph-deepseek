@@ -17,7 +17,7 @@ class AgentState(TypedDict):
     conclusion: str
 
 # 直接在代码中定义支持 OpenAI 格式的 API 密钥和 API 地址
-OPENAI_API_KEY = "sk-194bd99861e548b6a356c498510f221f"  # 替换为你的 OpenAI API 密钥
+OPENAI_API_KEY = "*********"  # 替换为你的 OpenAI API 密钥
 OPENAI_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 替换为你的自定义 API 地址
 
 # 初始化 OpenAI 模型
