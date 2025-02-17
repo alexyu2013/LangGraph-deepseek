@@ -16,7 +16,7 @@ class AgentState(TypedDict):
     facts: list
     conclusion: str
 
-# 直接在代码中定义 OpenAI API 密钥和 API 地址
+# 直接在代码中定义支持 OpenAI 格式的 API 密钥和 API 地址
 OPENAI_API_KEY = "sk-194bd99861e548b6a356c498510f221f"  # 替换为你的 OpenAI API 密钥
 OPENAI_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 替换为你的自定义 API 地址
 
@@ -118,7 +118,7 @@ workflow.set_entry_point("gather_facts")
 graph = workflow.compile()
 
 # Streamlit UI
-st.title("基于DeepSeek模型推理的个股分析")
+st.title("基于DeepSeek推理能力的个股分析")
 question = st.text_input("输入股票代码:")
 if st.button("分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
