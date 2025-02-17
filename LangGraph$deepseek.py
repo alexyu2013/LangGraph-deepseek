@@ -24,7 +24,7 @@ OPENAI_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 替换�
 def get_llm():
     return ChatOpenAI(
         api_key=OPENAI_API_KEY,
-        model_name='deepseek-v3',  # 使用 OpenAI 模型
+        model_name='deepseek-r1',  # 使用 OpenAI 模型
         openai_api_base=OPENAI_API_BASE  # 指定 API 地址
     )
 
@@ -118,7 +118,7 @@ workflow.set_entry_point("gather_facts")
 graph = workflow.compile()
 
 # Streamlit UI
-st.title("基于DeepSeek的个股分析")
+st.title("基于 DeepSeek 推理的个股分析")
 question = st.text_input("输入股票代码:")
 if st.button("分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
