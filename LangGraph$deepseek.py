@@ -26,6 +26,7 @@ def get_llm():
         api_key=OPENAI_API_KEY,
         model_name='deepseek-v3',  # 使用 OpenAI 模型
         openai_api_base=OPENAI_API_BASE  # 指定 API 地址
+        temperature=0.7  # 调整温度，避免过于随机
     )
 
 llm = get_llm()
@@ -86,13 +87,15 @@ def gather_facts(state: AgentState) -> AgentState:
 
 def draw_conclusion(state: AgentState) -> AgentState:
     facts = "\n".join(state["facts"])
-    prompt = PromptTemplate(template="""Based on these financial facts:
-    {facts}
-    Provide a structured analysis of the stock's potential movement:
-    - **Trend Analysis**
-    - **Market Position**
-    - **Potential Risks**
-    """, input_variables=["facts"])
+    prompt = PromptTemplate(template="""基于以下财务数据：
+     {facts}
+     请提供股票潜在走势的结构化分析：
+     - **趋势分析**
+     - **市场地位**
+     - **潜在风险**
+     - **操作建议**
+     """, input_variables=["facts"])
+
     
     chain = prompt | llm
     try:
