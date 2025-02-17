@@ -118,13 +118,13 @@ workflow.set_entry_point("gather_facts")
 graph = workflow.compile()
 
 # Streamlit UI
-st.title("基于 DeepSeek 推理的个股分析")
+st.title("基于 DeepSeek 推理的个股行情分析")
 question = st.text_input("输入股票代码:")
 if st.button("分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
     result = graph.invoke(initial_state)
-    st.subheader("相关股票数据如下:")
+    st.subheader("股票实时数据如下:")
     for fact in result["facts"]:
         st.text(fact)
-    st.subheader("结论:")
+    st.subheader("结构化分析推演:")
     st.markdown(result["conclusion"])
