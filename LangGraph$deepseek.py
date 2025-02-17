@@ -17,8 +17,8 @@ class AgentState(TypedDict):
     conclusion: str
 
 # 直接在代码中定义 OpenAI API 密钥和 API 地址
-OPENAI_API_KEY = "sk-YbovpUeEi3FsJaNs990d77D515D445278a2187Ff5232160b"  # 替换为你的 OpenAI API 密钥
-OPENAI_API_BASE = "https://api.laoyulaoyu.top/v1"  # 替换为你的自定义 API 地址
+OPENAI_API_KEY = "sk-194bd99861e548b6a356c498510f221f"  # 替换为你的 OpenAI API 密钥
+OPENAI_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 替换为你的自定义 API 地址
 
 # 初始化 OpenAI 模型
 def get_llm():
