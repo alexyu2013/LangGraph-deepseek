@@ -118,7 +118,7 @@ workflow.set_entry_point("gather_facts")
 graph = workflow.compile()
 
 # Streamlit UI
-st.title("基于 DeepSeek 推理的个股行情分析")
+st.title("基于DeepSeek模型推理的个股分析")
 question = st.text_input("输入股票代码:")
 if st.button("分析"):
     initial_state = {"question": question, "facts": [], "conclusion": ""}
