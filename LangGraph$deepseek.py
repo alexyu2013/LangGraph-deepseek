@@ -1,5 +1,3 @@
-!pip install openai langchain yfinance pandas numpy streamlit langgraph langchain-community -i 
-
 import os
 import re
 import yfinance as yf
